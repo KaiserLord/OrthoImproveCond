@@ -32,7 +32,7 @@ if __name__ == "__main__":
     # I extracted 'data.tgz' into a folder called anime_faces
     # but you can put whatever folder your data is in instead.
     # This will go through all subfolders recursively.
-    for root, dirs, files in os.walk("/data/ysong/anime-face"):
+    for root, dirs, files in os.walk("./data/face"):
         for file in files:
             path = os.path.join(root, file)
             if os.stat(path).st_size == 0:
@@ -42,6 +42,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "path",
         type=str,
+        default='D:\GitHub\OrthoImproveCond\EigenGAN\data\\face',
         help="path to the dataset",
     )
     parser.add_argument(

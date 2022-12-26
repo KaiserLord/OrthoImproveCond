@@ -28,11 +28,7 @@ def accumulate(model1, model2, decay=0.999):
 if __name__ == "__main__":
 
     import os
-    # There are some 0 byte JPG files that cause issues
-    # I extracted 'data.tgz' into a folder called anime_faces
-    # but you can put whatever folder your data is in instead.
-    # This will go through all subfolders recursively.
-    for root, dirs, files in os.walk("/data/ysong/anime-face"):
+    for root, dirs, files in os.walk("D:\GitHub\pythonSpider\BaiduImageSpider\\500px\\face"):
         for file in files:
             path = os.path.join(root, file)
             if os.stat(path).st_size == 0:
@@ -42,6 +38,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "path",
         type=str,
+        default='D:\GitHub\pythonSpider\BaiduImageSpider\\500px\\face',
         help="path to the dataset",
     )
     parser.add_argument(
@@ -54,7 +51,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--device",
         type=str,
-        default="cuda",
+        default="cpu",
         help="cpu/cuda (does not support multi-GPU training for now)",
     )
     parser.add_argument(
@@ -385,4 +382,3 @@ if __name__ == "__main__":
                 ckpt,
                 os.path.join(logdir, "checkpoints", f"{str(step).zfill(7)}.pt"),
             )
-

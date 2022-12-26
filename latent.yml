@@ -124,4 +124,4 @@ dependencies:
     - pyparsing==3.0.9
     - python-dateutil==2.8.2
     - pytorch-fid==0.2.1
-prefix: /data/ysong/anaconda3/envs/latent
+prefix: F:\APP\Anaconda3\envs\latent
